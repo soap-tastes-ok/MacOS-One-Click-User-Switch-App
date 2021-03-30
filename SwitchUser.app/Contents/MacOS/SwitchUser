@@ -1,0 +1,12 @@
+#!/bin/sh
+if [[ -z $1 ]]; then
+  # If no argument is provided
+  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+else
+  # If user ID is provided as argument, switch to that user
+  USERID=`id -u $1`;
+  if [[ -z $USERID ]]; then
+    exit -1;
+  fi;
+  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -switchToUserID $USERID
+fi;
