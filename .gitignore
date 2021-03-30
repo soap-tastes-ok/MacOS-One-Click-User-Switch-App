@@ -2,6 +2,9 @@
 archives/
 archive/
 
+# MacOS specific file
+.DS_store
+
 # Jupyter cache
 *.ipynm_checkpoints
 
